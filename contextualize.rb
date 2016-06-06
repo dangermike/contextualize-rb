@@ -7,10 +7,7 @@ OptionParser.new do |opts|
   opts.on('-c', '--context REGEX', 'Regex to identify context lines') { |v| options[:regex] = v }
 end.parse!
 
-puts options
-
 rx = /#{options[:regex]}/
-
 context = ""
 
 ARGF.each_with_index do |line, idx|
